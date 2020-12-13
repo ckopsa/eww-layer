@@ -64,12 +64,11 @@ Each entry is either:
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
 (defun eww/init-eww ()
-  (progn
-    (dolist (mode '(eww-mode))
-      (eval-after-load "eww"
-        '(progn
-           (define-key eww-link-keymap "f" 'eww-follow-link)
-           (define-key eww-link-keymap "F" (lambda () (interactive) (eww-follow-link 2)))))
+  (with-eval-after-load "eww"
+    (define-key eww-link-keymap "f" 'eww-follow-link)
+    (define-key eww-link-keymap "F" (lambda () (interactive) (eww-follow-link 2)))
+
+    (let ((mode 'eww-mode))
       (spacemacs/declare-prefix-for-mode mode "mv" "view")
       (spacemacs/declare-prefix-for-mode mode "ml" "list")
       (spacemacs/set-leader-keys-for-major-mode mode
@@ -93,13 +92,15 @@ Each entry is either:
         "L" 'eww-forward-url
         (kbd "C-j") 'shr-next-link
         (kbd "C-k") 'shr-previous-link
-        "o" 'ace-link-eww)
-    (dolist (mode '(eww-history-mode))
+        "o" 'ace-link-eww))
+
+    (let ((mode 'eww-history-mode))
       (spacemacs/set-leader-keys-for-major-mode mode
         "f" 'eww-history-browse)
       (evil-define-key 'normal eww-history-mode-map "f" 'eww-history-browse
-        "q" 'quit-window)
-    (dolist (mode '(eww-bookmark-mode))
+        "q" 'quit-window))
+
+    (let ((mode 'eww-bookmark-mode))
       (spacemacs/set-leader-keys-for-major-mode mode
         "d" 'eww-bookmark-kill
         "y" 'eww-bookmark-yank
@@ -108,8 +109,9 @@ Each entry is either:
         "q" 'quit-window
         "f" 'eww-bookmark-browse
         "d" 'eww-bookmark-kill
-        "y" 'eww-bookmark-yank)
-    (dolist (mode '(eww-buffers-mode))
+        "y" 'eww-bookmark-yank))
+
+    (let ((mode 'eww-buffers-mode))
       (spacemacs/set-leader-keys-for-major-mode mode
         "f" 'eww-buffer-select
         "d" 'eww-buffer-kill
@@ -120,6 +122,5 @@ Each entry is either:
         "f" 'eww-buffer-select
         "d" 'eww-buffer-kill
         "n" 'eww-buffer-show-next
-        "p" 'eww-buffer-show-previous)
-      ))))))
+        "p" 'eww-buffer-show-previous))))
 ;;; packages.el ends here
