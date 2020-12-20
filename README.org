@@ -42,9 +42,12 @@
   file.
 
 * Key bindings
+   | Key Binding | Description      | Function         |
+   |-------------+------------------+------------------|
+   | ~SPC a w e~ | Start eww        | eww              |
+   | ~SPC a w w~ | List eww buffers | eww-list-buffers |
 ** Eww
-   | Key Binding | Description              | Function                         |
-   |-------------+--------------------------+----------------------------------|
+   | ~SPC m .~   | Eww Transient state      |                                  |
    | ~SPC m s~   | Search                   | helm-google-suggest              |
    | ~SPC m S~   | Search (alt)             | browse-web                       |
    | ~SPC m r~   | Reload                   | eww-reload                       |
@@ -58,15 +61,17 @@
    | ~SPC m v x~ | View in External Browser | eww-browse-with-external-browser |
    | ~SPC m v f~ | Toggle Fancy Fonts       | eww-toggle-fonts                 |
    | ~SPC m v r~ | Reader View              | eww-readable                     |
-   | ~H~         | Previous URL             | eww-previous-url                 |
+   | ~C-o/[~     | Previous URL             | eww-previous-url                 |
    | ~L~         | Next URL                 | eww-next-url                     |
-   | ~J~         | Next Eww Buffer          | eww-jump-next-buffer             |
-   | ~K~         | Previous Eww Buffer      | eww-jump-previous-buffer         |
+   | ~H~         | Next Eww Buffer          | eww-jump-next-buffer             |
+   | ~C-i/[~     | Previous Eww Buffer      | eww-jump-previous-buffer         |
    | ~C-j~       | Next Link                | shr-next-link                    |
    | ~C-k~       | Previous Link            | shr-previous-link                |
    | ~f~         | Follow Link              | eww-follow-link                  |
    | ~F~         | Follow Link New Buffer   | eww-follow-link                  |
    | ~o~         | Follow Link (avy/ace)    | eww-follow-link                  |
+   | ~+/-~       | zoom in/out              | zoom-frm-in/out                  |
+   | ~=~         | unzoom                   | zoom-frm-unzoom                  |
 ** Eww History
    | ~SPC m f~ | Open History | eww-history-browse |
    | ~f~       | Open History | eww-history-browse |
