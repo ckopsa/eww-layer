@@ -33,6 +33,7 @@
   '(
     ;; A local package
     (eww :location built-in)
+    texfrag
     ;; (ace-link :location elpa)
     ;; (helm-net :location elpa)
     )
@@ -123,4 +124,7 @@ Each entry is either:
         "d" 'eww-buffer-kill
         "n" 'eww-buffer-show-next
         "p" 'eww-buffer-show-previous))))
+(defun eww/init-texfrag ()
+  (use-package texfrag
+    :defer t))
 ;;; packages.el ends here
