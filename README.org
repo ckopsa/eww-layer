@@ -12,6 +12,7 @@
   - [[#eww-history][Eww History]]
   - [[#eww-bookmarks][Eww Bookmarks]]
   - [[#eww-buffers][Eww Buffers]]
+- [[#test-github-wiki-width][test github wiki width]]
 
 * Description
   This layer does wonderful things:
@@ -97,3 +98,6 @@
    # [[https://github.com/syl20bnr/spacemacs/blob/master/doc/VIMUSERS.org#sessions]]
    # [[https://github.com/syl20bnr/spacemacs/blob/master/layers/%2Bfun/emoji/README.org][Link to Emoji layer README.org]]
    # If space-doc-mode is enabled, Spacemacs will open a local copy of the linked file.
+
+* test github wiki width
+1234 2345 3456 4567 5678 6789 7890 1234 3245 3456 4576 5678 6789 8790 1234 2345 3456 4567 5678 6789 7890 1234 3245 3456 4576 5678 6789
